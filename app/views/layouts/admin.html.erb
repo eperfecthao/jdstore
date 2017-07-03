@@ -15,7 +15,9 @@
         <%= render "common/flashes" %>
       </div>
       <div class="col-md-2">
-        <%= link_to "Products", admin_products_path, class: "btn btn-primary" %>
+        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+          <li> <%= link_to("Products", admin_products_path, class: "btn btn-primary") %> </li>
+        </ul>
       </div>
       <div class="col-md-10">
         <%= yield %>
