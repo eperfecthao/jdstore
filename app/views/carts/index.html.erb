@@ -1,5 +1,7 @@
 <div class="row">
   <div class="col-md-12">
+
+    <%= link_to "清空购物车", clean_cart_items_path, method: :post, class: "btn btn-danger pull-right" %>
     <h2>购物车</h2>
 
     <table class="table table-bordered">
@@ -15,10 +17,12 @@
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
-              <% if cart_item.product.image.present? %>
-                <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
-              <% else %>
-                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+              <%= link_to product_path(cart_item) do %>
+                <% if cart_item.product.image.present? %>
+                  <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                <% end %>
               <% end %>
             </td>
             <td><%= cart_item.product.price %></td>
