@@ -1,7 +1,10 @@
 class CartItemsController < ApplicationController
 
-  def clean
-    current_cart.clean!
-    redirect_to :back, alert: "清空购物车成功!"
+  def destroy
+    @cart = current_cart
+    @cart_item = @cart.cart_items.find_by(product_id: params[:id])
+    @product = @cart_item.product
+    @cart_item.destroy
+    redirect_to :back, alert: "成功将#{@product.title}删除!"
   end
 end
