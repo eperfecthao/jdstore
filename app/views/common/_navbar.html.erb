@@ -29,7 +29,9 @@
                       <% if current_user.admin? %>
                         <li><%= link_to "Admin后台", admin_products_path %></li>
                       <% end %>
-
+                      <li>
+                        <%= link_to "订单列表", account_orders_path %>
+                      </li>
                       <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
                     </ul>
                   </li>
