@@ -4,4 +4,8 @@ class CartsController < ApplicationController
     current_cart.clean!
     redirect_to :back, alert: "清空购物车成功!"
   end
+
+  def checkout
+    @order = Order.new
+  end
 end
