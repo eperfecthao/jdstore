@@ -43,6 +43,12 @@ class OrdersController < ApplicationController
     redirect_to order_path(@order.token), notice: "使用微信付款成功"
   end
 
+  def apply_to_cancel
+    @order = Order.find(params[:id])
+    OrderMailer.apply_cancel(@order).deliver!
+    redirect_to :back, notice: "已提交申请"
+  end
+
   private
 
   def order_params
