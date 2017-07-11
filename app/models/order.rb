@@ -7,4 +7,10 @@ class Order < ApplicationRecord
   validates_presence_of :billing_address
   validates_presence_of :shipping_name
   validates_presence_of :shipping_address
+
+  before_create :generate_token
+
+  def generate_token
+    self.token = SecureRandom.uuid
+  end
 end
