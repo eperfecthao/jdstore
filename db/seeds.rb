@@ -19,4 +19,5 @@ product.description = "this is a ipone7"
 product.price = "7500"
 product.quantity = "25"
 product.image = "http://oqibh4tbw.bkt.clouddn.com/%E8%8A%B1%E7%93%A3%E5%8D%A1%E5%B8%83%E5%A5%87%E8%AF%BA.jpg"
+product.position
 product.save

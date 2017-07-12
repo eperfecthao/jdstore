@@ -4,4 +4,7 @@ class Product < ApplicationRecord
   validates :quantity, presence: true
 
   mount_uploader :image, ImageUploader
+
+  acts_as_list
+
 end

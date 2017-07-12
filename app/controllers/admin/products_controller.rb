@@ -1,13 +1,13 @@
 class Admin::ProductsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :move_up, :move_down]
   before_action :require_is_admin
 
   layout "admin"
 
   def index
-    @products = Product.all
+    @products = Product.all.order("position ASC")
   end
 
   def new
@@ -38,6 +38,16 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product.destroy
     redirect_to admin_products_path, warning: "删除商品成功"
+  end
+
+  def move_up
+    @product.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @product.move_lower
+    redirect_to :back
   end
 
 

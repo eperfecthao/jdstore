@@ -31,6 +31,8 @@
         </td>
         <td>
           <%= link_to "Edit", edit_admin_product_path(product) %> |
+          <%= link_to "上移", move_up_admin_product_path(product), method: :post %>
+          <%= link_to "下移", move_down_admin_product_path(product), method: :post %>
           <%= link_to "Destroy", admin_product_path(product), method: :delete,
                 data: {confirm: "你确定吗?"} %>
         </td>
