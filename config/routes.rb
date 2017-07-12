@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :orders do
       member do
         post :ship
-        post :shiped
+        post :shipped
         post :cancel
         post :return
       end
