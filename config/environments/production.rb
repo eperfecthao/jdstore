@@ -86,9 +86,9 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'https://dashboard.heroku.com/apps/secure-refuge-32843'}
 
-  config.action_mailer.delivery_method = :stmp
+  config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    address: "stmpcloud.sohu.com",
+    address: "smtpcloud.sohu.com",
     port: 25,
     domain: "heroku.com",
     authentication: "login",
